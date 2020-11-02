@@ -16,7 +16,11 @@ const HomePage = props => {
 const TopicsList = props => {
   console.log(props);
   return (
-    <div> <h1>TopicsList Page</h1></div>
+    <div> <h1>TopicsList Page</h1>
+    <Link to={`${props.match.url}/13`}>To Topic 13</Link>
+    <Link to={`${props.match.url}/14`}>To Topic 14</Link>
+    <Link to={`${props.match.url}/15`}>To Topic 15</Link>
+    </div>
   );
 };
 
@@ -31,8 +35,10 @@ function App() {
   return (
       <div>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/topics' component={TopicsList} />
-        <Route path='/topics/:topicId' component={TopicDetail} />
+        <Route exact path='/blog/ml/topics' component={TopicsList} />
+        <Route path='/blog/ml/topics/:topicId' component={TopicDetail} />
+        <Route exact path='/blog/topics' component={TopicsList} />
+        <Route path='/blog/topics/:topicId' component={TopicDetail} />
       </div>
   );
 }
